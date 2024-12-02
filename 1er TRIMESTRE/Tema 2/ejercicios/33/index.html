@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botones con Sprite</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .button {
+            width: 43px;
+            height: 42px;
+            background-image: url('https://img.freepik.com/vector-gratis/botones-juego-interfaz-dibujos-animados-textura-home-buscar-config_107791-5058.jpg');
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            background-color: transparent; 
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Transición suave */
+        }
+
+        /* Botón home */
+        .button.home {
+            background-position: -205px -24px; 
+        }
+
+        /* Botón buscar */
+        .button.buscar {
+            background-position: -351px -80px;
+        }
+
+        /* Botón config */
+        .button.config {
+            background-position: -303px -80px; 
+        }
+
+        /* Efectos al pasar el ratón (hover) */
+        .button:hover {
+            transform: scale(1.2); /* Aumenta el tamaño */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra alrededor */
+            filter: brightness(1.2); /* Aumenta el brillo */
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button class="button home" title="Botón home"></button>
+        <button class="button buscar" title="Botón buscar"></button>
+        <button class="button config" title="Botón config"></button>
+    </div>
+</body>
+</html>

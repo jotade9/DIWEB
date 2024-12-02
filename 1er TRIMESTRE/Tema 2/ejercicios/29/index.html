@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow y Scroll</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Contenedor principal */
+        .container {
+            width: 400px;
+            height: 300px;
+            border: 2px solid #3498db;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para el contenido largo */
+        .content {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .long-text {
+            height: 600px; /* Hacemos el contenido lo suficientemente largo */
+        }
+
+        .horizontal {
+            width: 700px; /* Hacemos el contenido lo suficientemente ancho */
+        }
+
+        /* Ejemplo de texto de contenido */
+        .example {
+            padding: 10px;
+            background-color: #ecf0f1;
+            border: 1px solid #bdc3c7;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contenedor con overflow hidden -->
+    <div class="container" style="overflow: hidden;">
+        <h2>Overflow: hidden;</h2>
+        <div class="content long-text">
+            <p class="example">Este es un ejemplo con un contenido largo. Si no ves toda la información es porque el contenedor tiene <strong>overflow: hidden</strong> y se corta cualquier contenido que se salga de los límites.</p>
+        </div>
+    </div>
+
+    <!-- Contenedor con overflow scroll -->
+    <div class="container" style="overflow: scroll;">
+        <h2>Overflow: scroll;</h2>
+        <div class="content long-text">
+            <p class="example">Este es un ejemplo con un contenido largo. Aquí verás barras de desplazamiento en ambas direcciones (vertical y horizontal) porque el contenedor tiene <strong>overflow: scroll</strong>.</p>
+        </div>
+    </div>
+
+    <!-- Contenedor con overflow auto -->
+    <div class="container" style="overflow: auto;">
+        <h2>Overflow: auto;</h2>
+        <div class="content long-text">
+            <p class="example">Este es un ejemplo con un contenido largo. Si el contenido se desborda, aparecerán las barras de desplazamiento solo cuando sea necesario, ya que el contenedor tiene <strong>overflow: auto</strong>.</p>
+        </div>
+    </div>
+
+    <!-- Contenedor con overflow-x scroll y overflow-y hidden -->
+    <div class="container" style="overflow-x: scroll; overflow-y: hidden;">
+        <h2>Overflow-X: scroll; Overflow-Y: hidden;</h2>
+        <div class="content horizontal">
+            <p class="example">Este es un ejemplo con contenido muy ancho. Solo aparecerá una barra de desplazamiento horizontal, ya que hemos configurado <strong>overflow-x: scroll</strong> y <strong>overflow-y: hidden</strong>.</p>
+        </div>
+    </div>
+
+    <!-- Contenedor con overflow-x hidden y overflow-y scroll -->
+    <div class="container" style="overflow-x: hidden; overflow-y: scroll;">
+        <h2>Overflow-X: hidden; Overflow-Y: scroll;</h2>
+        <div class="content long-text">
+            <p class="example">Este es un ejemplo con contenido muy largo. Solo aparecerá una barra de desplazamiento vertical, ya que hemos configurado <strong>overflow-x: hidden</strong> y <strong>overflow-y: scroll</strong>.</p>
+        </div>
+    </div>
+
+</body>
+</html>

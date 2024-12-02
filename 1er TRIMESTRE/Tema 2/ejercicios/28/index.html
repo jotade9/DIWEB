@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorando Alineación y Centrado</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            background-color: lightgray;
+            padding: 20px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        /* Alineación de texto centrado en un contenedor */
+        .text-container {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Elemento de bloque centrado horizontalmente */
+        .block-element {
+            width: 50%;
+            margin: 20px auto; /* Margin auto para centrado horizontal */
+            background-color: #2ecc71;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Imagen centrada horizontalmente */
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            width: 50%;
+            max-width: 600px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Alineación izquierda y derecha */
+        .left-right-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .left-right-container .left {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px;
+            width: 45%;
+        }
+
+        .left-right-container .right {
+            background-color: #f39c12;
+            color: white;
+            padding: 10px;
+            width: 45%;
+        }
+
+        /* Centrado vertical utilizando padding y line-height */
+        .vertical-center {
+            height: 200px;
+            padding: 50px;
+            line-height: 100px;
+            background-color: #9b59b6;
+            color: white;
+        }
+
+        /* Alineación del texto */
+        .text-alignment {
+            text-align: left; /* Cambia a center, right para experimentar */
+            background-color: #34495e;
+            color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Diferentes anchos y efectos */
+        .block-small {
+            width: 30%;
+            background-color: #16a085;
+        }
+
+        .block-large {
+            width: 80%;
+            background-color: #f1c40f;
+        }
+
+        /*
+
+Qué sucede si quitas el margin: auto del elemento de bloque?
+Sin margin: auto, el bloque no estará centrado. El margin: auto es lo que permite centrar el bloque horizontalmente cuando se especifica un ancho.
+
+¿Cómo afecta la altura al centrado vertical con line-height?
+La propiedad line-height afecta el centrado vertical del texto cuando el height del contenedor es definido. Si el line-height es igual a la altura del contenedor, 
+el texto se centrará verticalmente dentro del contenedor.
+*/
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Texto centrado dentro de un contenedor -->
+        <div class="text-container">
+            <h2>Texto centrado dentro de un contenedor</h2>
+            <p>Este es un contenedor con texto centrado.</p>
+        </div>
+
+        <!-- Elemento de bloque centrado horizontalmente -->
+        <div class="block-element">
+            <h3>Elemento centrado horizontalmente</h3>
+            <p>Este elemento de bloque está centrado horizontalmente.</p>
+        </div>
+
+        <!-- Imagen centrada horizontalmente -->
+        <div class="image-container">
+            <img src="a.jpg" alt="Imagen centrada">
+        </div>
+
+        <!-- Elementos alineados a la izquierda y derecha -->
+        <div class="left-right-container">
+            <div class="left">
+                <h3>Alineado a la izquierda</h3>
+                <p>Este bloque está alineado a la izquierda.</p>
+            </div>
+            <div class="right">
+                <h3>Alineado a la derecha</h3>
+                <p>Este bloque está alineado a la derecha.</p>
+            </div>
+        </div>
+
+        <!-- Elemento centrado verticalmente utilizando padding y line-height -->
+        <div class="vertical-center">
+            <h3>Elemento centrado verticalmente</h3>
+            <p>Este texto está centrado verticalmente gracias al uso de padding y line-height.</p>
+        </div>
+
+        <!-- Diferentes anchos para experimentar -->
+        <div class="block-small">
+            <h3>Elemento con ancho pequeño</h3>
+            <p>Este bloque tiene un ancho pequeño.</p>
+        </div>
+
+        <div class="block-large">
+            <h3>Elemento con ancho grande</h3>
+            <p>Este bloque tiene un ancho grande.</p>
+        </div>
+
+        <!-- Alineación de texto experimentando con left, center y right -->
+        <div class="text-alignment" style="text-align: left;">
+            <h3>Alineación de texto a la izquierda</h3>
+            <p>Este texto está alineado a la izquierda.</p>
+        </div>
+
+        <div class="text-alignment" style="text-align: center;">
+            <h3>Alineación de texto al centro</h3>
+            <p>Este texto está alineado al centro.</p>
+        </div>
+
+        <div class="text-alignment" style="text-align: right;">
+            <h3>Alineación de texto a la derecha</h3>
+            <p>Este texto está alineado a la derecha.</p>
+        </div>
+    </div>
+
+</body>
+</html>
