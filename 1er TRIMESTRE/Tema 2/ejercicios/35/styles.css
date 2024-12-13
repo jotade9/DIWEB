@@ -1,0 +1,48 @@
+/* Requisito 1: Herencia para el color de texto general */
+body {
+    color: #333; /* Color general */
+    font-family: Arial, sans-serif; /* Fuente general */
+  }
+  
+  /* Requisito 2: Fuente diferente para los párrafos dentro de la sección */
+  section p {
+    font-family: "Georgia", serif;
+  }
+  
+  /* Requisito 3: Estilo para el elemento con clase highlight */
+  .highlight {
+    background-color: yellow;
+    font-weight: bold;
+  }
+  
+  /* Requisito 4: Sobrescribir el color de texto para el párrafo con id="override" */
+  #override {
+    color: blue !important; /* Color personalizado con mayor prioridad */
+  }
+  
+  /* Requisito 5: Título principal que hereda el color y tiene tamaño definido */
+  .title {
+    font-size: 2.5em; /* Tamaño mayor */
+  }
+  
+  /* Requisito 6: Uso de !important */
+  footer p {
+    font-size: 0.9em !important; /* Prioridad a este tamaño */
+  }
+  /*
+  ¿Qué sucede si cambias el orden de las reglas CSS?
+El orden afecta a las reglas con la misma especificidad. 
+Las reglas declaradas más abajo sobrescriben las anteriores si tienen la misma prioridad, excepto si una de ellas usa !important.
+
+¿Cómo afecta la especificidad a los estilos aplicados en el párrafo #override?
+La especificidad es clave. Una regla con un selector más específico, como #override (id), 
+tiene prioridad sobre reglas menos específicas (como clases o etiquetas). Además, el uso de !important refuerza aún más la prioridad, haciéndola definitiva.
+
+¿Qué sucede si eliminas el !important de alguna regla?
+Al eliminar !important, la prioridad vuelve a depender de la especificidad y el orden en la cascada. 
+Si una regla más específica o más abajo en el archivo entra en conflicto, sobrescribirá la regla sin !important.
+
+¿Qué reglas son heredadas automáticamente y cuáles necesitas especificar explícitamente?
+
+Las propiedades relacionadas con el texto, como color y font-family, suelen heredarse automáticamente por los elementos hijos.
+Propiedades como background-color o font-weight no se heredan automáticamente y deben especificarse explícitamente.*/

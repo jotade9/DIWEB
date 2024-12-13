@@ -1,0 +1,49 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  /* Estilo general de párrafos */
+  p {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: left; /* Por defecto alineados a la izquierda */
+  }
+  
+  /* Estilo general para imágenes */
+  img {
+    display: block;
+    margin: 10px 0;
+    text-align: left; /* Por defecto alineadas a la izquierda */
+  }
+  
+  /* Estilo general para enlaces */
+  a {
+    display: block;
+    text-align: center; 
+    margin: 10px 0;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Estilos con @media para pantallas */
+  @media (min-width: 768px) {
+    img {
+      text-align: center; /* Centradas solo en pantallas */
+      margin: 10px auto;
+    }
+  }
+  

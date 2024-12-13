@@ -1,0 +1,138 @@
+/* Estilos globales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Estilo para la sección "Sobre mí" */
+.about {
+    background-color: #f9f9f9; /* Fondo suave */
+    padding: 40px 20px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin: 20px auto; /* Margen superior/inferior */
+    max-width: 800px; /* Ancho máximo para un diseño centrado */
+    line-height: 1.6; /* Espaciado de líneas cómodo */
+}
+
+.about h2 {
+    font-size: 2rem; /* Tamaño del título */
+    margin-bottom: 15px; /* Separación del texto */
+    color: #333; /* Color del título */
+}
+
+.about p {
+    font-size: 1rem; /* Tamaño del párrafo */
+    color: #555; /* Color del texto */
+}
+
+
+
+
+header, main, footer {
+    padding: 20px;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Estilo de la cabecera */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+}
+
+header h1 {
+    margin-left: 10px;
+}
+
+header nav ul {
+    display: flex;
+    gap: 15px;
+    margin-right: 10px;
+}
+
+header nav ul li a {
+    color: white;
+    font-weight: bold;
+}
+
+/* Estilo de la galería */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+
+.gallery h2 {
+    text-align: center; /* Centra el texto */
+    margin: 0 auto 20px auto; /* Asegura márgenes centrados */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    font-size: 2rem; /* Tamaño del texto */
+    color: #333; /* Color del texto */
+    display: block; 
+}
+
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s;
+    overflow: hidden;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background-color: #f0f0f0;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+/* Estilo del pie de página */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    height: 60px;
+}
