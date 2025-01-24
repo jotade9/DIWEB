@@ -1,0 +1,174 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Fondo claro */
+}
+
+/* CABECERA */
+header {
+    background: url('oficina.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF; /* Blanco para texto */
+    text-align: center;
+    position: relative;
+}
+
+.header-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #2C3E50; /* Gris oscuro para mejor contraste */
+}
+
+.header-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #34495E; /* Gris más oscuro para mejor contraste */
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color: #D4AF37; /* Color dorado suave */
+    color: white;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: #F39C12; /* Dorado más intenso en hover */
+}
+
+/* GALERÍA PRINCIPAL */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; /* Espacio entre las imágenes */
+    padding: 40px;
+    background-color: #fdfdfd; /* Fondo suave para contraste */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+}
+
+.gallery-img {
+    width: 100%; /* Ajuste automático */
+    aspect-ratio: 4/3; /* Proporción fija */
+    border-radius: 12px; /* Esquinas redondeadas */
+    overflow: hidden;
+    background-color: #fff; /* Fondo para evitar imágenes vacías */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra elegante */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05); /* Efecto de zoom */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Más sombra al hacer hover */
+    filter: brightness(1.1);
+}
+
+.gallery-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Etiquetas de imagen */
+.gallery-caption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #2C3E50; /* Gris oscuro para contraste */
+    font-weight: 500;
+}
+
+
+/* SECCIÓN DE CONTENIDO */
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 20px;
+    gap: 20px;
+}
+
+.content-item {
+    width: 30%;
+    text-align: center;
+}
+
+.content-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.text h2 {
+    font-size: 1.8rem;
+    color: #2C3E50; /* Gris oscuro para los títulos */
+    margin-bottom: 10px;
+}
+
+.text p {
+    color: #7F8C8D; /* Gris suave para los párrafos */
+}
+
+/* PIE DE PÁGINA */
+footer {
+    background-color: #2C3E50; /* Gris oscuro para el fondo del pie */
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-button {
+    background-color: #D4AF37; /* Dorado suave */
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer-button:hover {
+    background-color: #F39C12; /* Dorado más intenso en hover */
+}
+
+.footer-icon {
+    width: 25px;
+    margin-right: 10px;
+}
+
+/* ESTILOS RESPONSIVOS */
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+    }
+
+    .gallery-img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .content-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
