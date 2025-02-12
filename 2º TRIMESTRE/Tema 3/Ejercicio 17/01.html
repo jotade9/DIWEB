@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Animación</title>
+    <style>
+        /* Ejercicio 1 */
+        h1 {
+            position: relative;
+            overflow: hidden;
+        }
+        .anim-letra {
+            display: inline-block;
+            animation: moverLetra 4s linear 1s infinite alternate;
+        }
+        @keyframes moverLetra {
+            0% { transform: translateX(0) scale(1); color: red; }
+            25% { transform: translateX(25vw) scale(1.5); color: blue; }
+            50% { transform: translateX(50vw) scale(2); color: green; }
+            75% { transform: translateX(25vw) scale(1.5); color: purple; }
+            100% { transform: translateX(0) scale(1); color: red; }
+        }
+
+        /* Ejercicio 2 */
+        a {
+            display: inline-block;
+            transition: transform 0.5s linear, color 0.5s linear;
+        }
+        a:hover {
+            transform: scale(2) rotate(180deg);
+            color: red;
+        }
+
+        /* Ejercicio 3 */
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border-radius: 50%;
+            transition: background-color 1s ease-in-out;
+        }
+        .circle:hover {
+            background-color: green;
+        }
+        .circle-steps {
+            transition-timing-function: steps(4);
+        }
+
+        /* Ejercicio 4 */
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1><span class="anim-letra">P</span></h1>
+    
+    <a href="#">Enlace animado</a>
+    
+    <div class="circle"></div>
+    <div class="circle circle-steps"></div>
+    
+    <canvas id="grafico" width="300" height="200"></canvas>
+
+    <script>
+        // Ejercicio 4: Animar un gráfico en Canvas
+        const canvas = document.getElementById("grafico");
+        const ctx = canvas.getContext("2d");
+        let x = 0;
+
+        function animar() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "red";
+            ctx.beginPath();
+            ctx.arc(x, 100, 20, 0, Math.PI * 2);
+            ctx.fill();
+            x += 2;
+            if (x > canvas.width) x = 0;
+            requestAnimationFrame(animar);
+        }
+        animar();
+    </script>
+</body>
+</html>
