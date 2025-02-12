@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Video</title>
+    <style>
+        .video-container {
+            position: relative;
+            border: 2px solid black;
+            width: 720px;
+            height: 480px;
+            margin: 20px auto;
+            background-color: black;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+        }
+
+        .controls {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .links a {
+            margin: 0 10px;
+            color: blue;
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="video-container">
+        <video id="video" poster="polo.png">
+            <source src="Change_for_a_Greener_Future.mp4" type="video/mp4">
+            <source src="Change_for_a_Greener_Future.webm" type="video/webm">
+            <source src="Change_for_a_Greener_Future.ogv" type="video/ogg">
+            Tu navegador no soporta el video.
+        </video>
+        <div class="controls">
+            <button class="btn" onclick="playPause()" aria-label="Reproducir o pausar">Play/Pause</button>
+            <button class="btn" onclick="muteUnmute()" aria-label="Silenciar o activar sonido">Mute/Unmute</button>
+        </div>
+    </div>
+
+    <div class="links">
+        <a href="Change_for_a_Greener_Future.mp4" download>Descargar Video</a> |
+        <a href="Change_for_a_Greener_Future.mp4" target="_blank">Abrir Video en Nueva Página</a>
+    </div>
+
+    <script>
+        function playPause() {
+            var video = document.getElementById("video");
+            video.paused ? video.play() : video.pause();
+        }
+
+        function muteUnmute() {
+            var video = document.getElementById("video");
+            video.muted = !video.muted;
+        }
+    </script>
+
+</body>
+
+</html>

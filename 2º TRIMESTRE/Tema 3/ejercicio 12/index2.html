@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Música</title>
+    <style>
+        #error-mensaje {
+            color: red;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .play-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .stop-button {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .play-button:active {
+            background-color: #45a049;
+        }
+
+        .stop-button:active {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+
+<body role="document">
+
+    <div id="error-mensaje" style="display: none;" aria-live="assertive" aria-hidden="true" role="alert">
+        Tu navegador no soporta la etiqueta de audio.
+    </div>
+
+    <audio id="audio" controls aria-describedby="error-mensaje" aria-label="Reproductor de música">
+        <source src="onclassical.mp3" type="audio/mp3">
+        <source src="onclassical.ogg" type="audio/ogg">
+        <source src="onclassical.wav" type="audio/wav">
+        Tu navegador no soporta la etiqueta de audio.
+    </audio>
+
+    <script>
+        const audioElement = document.getElementById('audio');
+        const errorMessage = document.getElementById('error-mensaje');
+
+        if (!audioElement.canPlayType) {
+            errorMessage.style.display = 'block';
+            errorMessage.setAttribute('aria-hidden', 'false');
+        } else {
+            audioElement.load();
+            audioElement.autoplay = false;
+            errorMessage.setAttribute('aria-hidden', 'true');
+        }
+
+        function startAudio() {
+            audioElement.play();
+        }
+
+        function stopAudio() {
+            audioElement.pause();
+        }
+    </script>
+
+
+    <div class="button-container">
+        <button class="play-button" onclick="startAudio()" aria-label="Reproducir música" aria-controls="audio"
+            aria-pressed="false">Reproducir Música</button>
+        <button class="stop-button" onclick="stopAudio()" aria-label="Parar música" aria-controls="audio"
+            aria-pressed="false">Parar Música</button>
+    </div>
+
+</body>
+
+</html>
