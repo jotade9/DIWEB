@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    
+    <style>
+        .contenedor {
+            display: grid;
+            grid-template-columns: repeat(3, 2fr); /* Tres columnas */
+            gap: 15px;
+        }
+    
+        @media (max-width: 768px) {
+            .contenedor {
+                display: flex; /* Cambiar a Flexbox en pantallas más pequeñas */
+                flex-direction: column; /* Elementos en columna */
+            }
+        }
+    
+        .item {
+            background: #FF5722;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+    
+    
+</body>
+</html>
